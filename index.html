@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="index.js"></script>
+    <link rel="icon" href="images/favicon.png" />
+  </head>
+
+  <header>
+    <nav>
+      <div class="heading">
+        <h4>Host Price Predictor</h4>
+      </div>
+
+      <ul class="nav-links">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <body>
+    <div class="page-content">
+      <div class="title-section-wrapper">
+        <h4>Airbnb Price Predictor</h4>
+        <p>Determine the best price for your Airbnb.</p>   
+      </div>
+
+      <form class="form-wrapper">
+        <div class="form-row form-first-page">
+          <p>Select the city where you are a host:</p>
+          <select name="City" id="city" onChange="handleCitySelection()">
+            <option value="" disabled selected>Select your city</option>
+            <option value="volvo">New York City</option>
+          </select>
+        </div>
+  
+        <div class="form-row form-second-page">
+          <label for="roomtype">Room Type:</label>
+          <select name="Roomtype" id="roomtype">
+            <option value="Shared room" name="Shared room">Shared room</option>
+            <option value="Private room" name="Private room">Private room</option>
+            <option value="Entire home/apt" name="Entire home/apt">Entire home/apt</option>
+          </select>
+        </div>
+        <div class="form-row form-second-page">
+          <label for="neighborhood">Neighborhood:</label>
+          <select name="Neighborhood" id="neighborhood">
+            <option value="Manhattan" name="manhattan">Manhattan</option>
+            <option value="Brooklyn" name="brooklyn">Brooklyn</option>
+            <option value="Queens" name="queens">Queens</option>
+            <option value="Staten Island" name="staten_island">Staten Island</option>
+            <option value="Bronx" name="bronx">Bronx</option>
+          </select>
+        </div>
+        <div class="form-row form-second-page">
+          <label for="cancelationpolicy">Cancelation Policy:</label>
+          <select name="Cancelationpolicy" id="cancelationpolicy">
+            <option value="flexible" name="flexible">flexible</option>
+            <option value="moderate" name="moderate">moderate</option>
+            <option value="strict" name="strict">strict</option>
+          </select>
+        </div>
+        <div class="form-row form-second-page">
+          <label for="reviewamount">Number of Reviews:</label>
+          <input type="text" id="reviewamount" name="reviewamount">
+        </div>
+        <div class="form-row form-second-page">
+          <label for="reviewscore">Review Score:</label>
+          <input type="number" min="0" max="5" id="reviewscore" name="reviewscore">
+        </div>
+      </form>
+
+      <div class="generate-button-wrapper">
+        <button id="actionBtn" class="form-second-page">Generate Suggestion</button>
+      </div>
+
+      <div class="generate-button-wrapper">
+        <p id="price-content"></p>
+      </div>
+    </div>
+  </body>
+</html>
